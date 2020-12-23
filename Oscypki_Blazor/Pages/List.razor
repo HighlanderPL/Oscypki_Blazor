@@ -1,6 +1,26 @@
-﻿<h3>List</h3>
+﻿@page "/List"
+@inject IOscypekRepository _MockOscypekRepository
+
+<h3>List</h3>
+
+@foreach(var oscypek in oscypki)
+{
+    <OscypekCard Oscypki="oscypek"></OscypekCard>
+}
 
 
 @code {
 
+    IEnumerable<Oscypki> oscypki;
+
+    protected override async Task OnInitializedAsync()
+    {
+        oscypki = _MockOscypekRepository.AllOscypki;
+    }
 }
+
+
+
+
+
+
