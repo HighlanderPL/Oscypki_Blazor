@@ -16,6 +16,7 @@ namespace Oscypki_Blazor.Data
 
             };
 
+       
         public Oscypki GetOscypekById (int OscypkiId)
         {
             return AllOscypki.FirstOrDefault(o => o.OscypkiId == OscypkiId);
