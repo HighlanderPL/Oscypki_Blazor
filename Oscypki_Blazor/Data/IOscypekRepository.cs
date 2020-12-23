@@ -9,6 +9,6 @@ namespace Oscypki_Blazor.Data
     public interface IOscypekRepository
     {
         IEnumerable<Oscypki> AllOscypki { get; }
-        Oscypki GetOscypekById { get; }
+        Oscypki GetOscypekById(int OscypkiId);
     }
 }
