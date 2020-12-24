@@ -28,7 +28,7 @@ namespace Oscypki_Blazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+       
             services.AddScoped<IOscypekRepository, MockOscypekRepository>();
         }
 

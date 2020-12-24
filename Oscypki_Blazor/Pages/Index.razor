@@ -1,7 +1,20 @@
 ﻿@page "/"
+@inject IOscypekRepository _MockOscypekRepository
 
-<h1>Hello, world!</h1>
+<Carousel/>
 
-Welcome to your new app.
+@foreach (var oscypek in oscypki)
+{
+    <OscypekCard Oscypki="oscypek"></OscypekCard>
+}
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+
+    IEnumerable<Oscypki> oscypki;
+
+    protected override async Task OnInitializedAsync()
+    {
+        oscypki = _MockOscypekRepository.AllOscypki;
+    }
+}
