@@ -28,6 +28,7 @@ namespace Oscypki_Blazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+         
        
             services.AddScoped<IOscypekRepository, MockOscypekRepository>();
         }
