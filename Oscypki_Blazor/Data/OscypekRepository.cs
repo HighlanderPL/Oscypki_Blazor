@@ -8,18 +8,17 @@ namespace Oscypki_Blazor.Data
 {
     public class OscypekRepository : IOscypekRepository
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly ApplicationDbContext _appDbContext;
 
-        public OscypekRepository(AppDbContext appDbContext)
+        public OscypekRepository(ApplicationDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
-        public IEnumerable<Oscypki> AllOscypki()
+        public IEnumerable<Oscypki> GetAllOscypki()
         {
-            get {
-                IEnumerable<Oscypki> allOcypki = _appDbContext.Oscpkis.ToList();
+                           IEnumerable<Oscypki> allOcypki = _appDbContext.Oscpkis.ToList();
                 return allOcypki;
-            }
+           
            
         }
 

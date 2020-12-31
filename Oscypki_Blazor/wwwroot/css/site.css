@@ -53,7 +53,8 @@ a, .btn-link {
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     background-image: url('/img/background.jpg');
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Source Sans Pro', sans-serif;
 }
 

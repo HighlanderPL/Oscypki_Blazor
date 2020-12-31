@@ -1,5 +1,6 @@
 ﻿@page "/OscypekDetails/{id:int}"
 @inject IOscypekRepository _MockOscypekRepository
+@inject ShoppingCart shoppingCart
 <h2>@oscypek.Name</h2>
 
 <div class="thumbnail">
@@ -9,11 +10,11 @@
         <h3><a href="#">@oscypek.Name</a></h3>
         <h4>@oscypek.Description</h4>
        
-        @*<div class="addToCart">
+        <div class="addToCart">
             <p class="button">
-                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-pieId="@Model.PieId">Add to cart</a>
+                <a class="btn btn-primary" @onclick="(() => addToCart())">Add to cart</a>
             </p>
-        </div>*@
+        </div>
     </div>
 </div>
 
@@ -26,6 +27,11 @@
     protected override async Task OnInitializedAsync()
     {
         oscypek = _MockOscypekRepository.GetOscypekById(Id);
+    }
+
+    protected void addToCart()
+    {
+        shoppingCart.AddItemToCart(oscypek.OscypkiId, 1);
     }
 
 }

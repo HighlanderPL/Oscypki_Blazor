@@ -13,5 +13,7 @@ namespace Oscypki_Blazor.Models
         public decimal Price { get; set; }
         public string ImagePath { get; set; }
         public string ImageThumbnailPath { get; set; }
+
+        public bool SpecialSale { get; set; }
     }
 }
